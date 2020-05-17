@@ -11,6 +11,13 @@ wid,limit = args.w,args.n
 game=np.zeros([wid,wid], dtype=int)
 
 
+def format(curr_game):
+    for a in curr_game:
+        for elem in a:
+            print("{}".format(elem).rjust(3), end="")
+        print(end="\n")
+
+
 def random_twos(curr_game):
 	a = random.randint(0, len(game)-1)
 	b = random.randint(0, len(game)-1)
@@ -84,7 +91,7 @@ def win(curr_game):
 
 os.system("cls")
 game=random_twos(game)
-print(game)
+print(format(game))
 r=win(game)
 if r=="You_won":
 	print(r)
@@ -108,11 +115,11 @@ else:
 				game=transpose(reverse(merge(reverse(transpose(game)))))
 				k=False
 			else:
-				print('invalid option')
+				print('Invalid key pressed')
 				k=True
 		if not (t==game).all():
 			game=random_twos(game)
-		print(game)
+		print(format(game))
 		result=win(game)
 		if not result=="ntover":
 			print(result)
