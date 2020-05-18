@@ -41,6 +41,7 @@ if k=="wrong":
 			n=2**v
 			v=v+1
 		limit=n
+		print(limit)
 
 '''defines gameboard'''
 game=np.zeros([wid,wid], dtype=int)
